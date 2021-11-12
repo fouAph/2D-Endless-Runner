@@ -12,7 +12,6 @@ public class CharacterMoveController : MonoBehaviour
 
     [Header("Jump")]
     public float jumpAccel;
-    public float fallSpeed;
     private bool isJumping;
 
     [Header("Ground Raycast")]
@@ -98,11 +97,6 @@ public class CharacterMoveController : MonoBehaviour
                 isJumping = false;
             }
 
-            if(!isOnGround)
-            {
-                var vel =rb.velocity.y;
-                vel -= fallSpeed;
-            }
             rb.velocity = velocityVector;
     }
 
